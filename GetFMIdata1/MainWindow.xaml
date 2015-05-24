@@ -1,0 +1,29 @@
+﻿<Window x:Class="ArduinoRemoteThermometer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ArduinoRemoteThermometer" Height="240" Width="320">
+ 
+    <StackPanel Margin="5">
+        <TextBlock FontWeight="Bold" Text="Säähavainto" />
+        <WrapPanel Margin="0,5,0,0">
+            <TextBlock Text="Havaintoasema: " />
+            <ComboBox x:Name="selectStation" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" SelectionChanged="selectStation_SelectionChanged" />
+        </WrapPanel>
+        <WrapPanel>
+            <TextBlock Text="Havaintoaika: " />
+            <TextBlock x:Name="observationTime" Text="{Binding Path=Time, StringFormat={}{0:HH:mm}}" />
+        </WrapPanel>
+        <WrapPanel>
+            <TextBlock Text="Lämpötila: " VerticalAlignment="Center" />
+            <TextBlock x:Name="observationTemperature" Text="{Binding Path=Temperature, StringFormat={}{0:F1}}" FontSize="18" />
+            <TextBlock Text="°C" FontSize="18" />
+        </WrapPanel>
+        <Button x:Name="Refresh" Content="Päivitä" HorizontalAlignment="Center" Margin="0,10,0,0" Padding="5,2" Click="Refresh_Click" />
+        <TextBlock Text="Arduino" Margin="0,20,0,0" FontWeight="Bold" />
+        <WrapPanel>
+            <TextBlock Text="Valitse sarjaportti:" Margin="0,0,5,0" VerticalAlignment="Center" />
+            <ComboBox x:Name="selectComPort" DropDownOpened="selectComPort_DropDownOpened" Width="64" SelectionChanged="selectComPort_SelectionChanged" />
+            <Button x:Name="connectCom" Content="Yhdistä" Margin="10,0" Padding="5,1" Click="connectCom_Click" />
+        </WrapPanel>
+    </StackPanel>
+</Window>

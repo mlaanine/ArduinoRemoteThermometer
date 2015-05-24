@@ -1,0 +1,11 @@
+﻿// FMI stations
+// First part is the numeric station code, second part is station name
+100971 Helsinki Kaisaniemi
+100968 Helsinki Lentoasema
+100996 Helsinki Harmaja
+101520 Ähtäri
+
+// Weather Underground locations
+// Use the URL encoded "%20" for whitespaces in the first part
+United%20Kingdom/London Lontoo
+Argentina/Buenos%20Aires Buenos Aires
